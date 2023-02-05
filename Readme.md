@@ -1,10 +1,10 @@
-#RedeemScript:
+## RedeemScript:
 
 b.AddData(secret)
 b.AddData(contract)
 
 
-#plainredeemScript: 
+## plainredeemScript: 
  
 b.AddData(secret)
 c66531fb402f0088d9f5be954cbfededef83a9d3100ef028d57c5aef2dedba3a 
@@ -13,14 +13,14 @@ b.AddData(contract)
 a820d87584e4523ea6597caa8fa9bf263a0456f525e59955fc7224a832c51053845e87
 
 
-#PlainSecretContract to redeem: 
+## PlainSecretContract to redeem: 
 
 OP_SHA256
 d87584e4523ea6597caa8fa9bf263a0456f525e59955fc7224a832c51053845e 
 OP_EQUAL
 
 
-#Operations sequence on the stack:
+## Operations sequence on the stack:
 1. At first, script engine add on the stack all data from Redeem Script;
 2. It adds on the stack the secret (stepping 00:0000: OP_DATA_32)
 3. It adds on the stack the contract (stepping 00:0001: OP_DATA_35)
