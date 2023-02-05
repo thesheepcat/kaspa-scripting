@@ -36,9 +36,9 @@ func main() {
 	prefix := dagconfig.DevnetParams.Prefix
 
 	// Insert here the result of genkeypair operation
-	myPrivateKey := "00679dd236dd1675a1d9e564041381170823ecc712f0092d2aac260b464f9e16"
-	myAddressString := "kaspadev:qz4q0s2c7jdmd5depaxttpjmn6ckyzcndyqfhyx4h0lsakqpdt8y2edugjm8r"
-	recipientAddressString := "kaspadev:qp52ukce0tm4a39r59j3r7y65gy7anly03l2ge7dnckmtu7jexn7vyukktmny"
+	myPrivateKey := "74dec232e258cb7aa481c6ace3de06dedca588a15c7434f7ed75d830ce2cc5eb"
+	myAddressString := "kaspadev:qz9kd82dp2qd52vm97t94upugr74deg38yrqccxcncj5nwj2sqh0stv9w5sph"
+	recipientAddressString := "kaspadev:qrd9frpfnry9p67m88ste9wegcdlnakyvsr8ze2l5sgjhcv5lz3zvgev7p2ww"
 
 	// Some Private / Public keys manipulation
 	myAddress, err := util.DecodeAddress(myAddressString, prefix)
@@ -79,7 +79,7 @@ func main() {
 	fmt.Println()
 
 	// Redeem recipient private key and address
-	redeemPrivateKey := "39e640b6e94642f00aeee4e10bb3328d7487603092a90844c95fdde2db69ad68"
+	redeemPrivateKey := "09c97007242fb2078c6f78e991f7d43fdcd94ccd21655f54dca87a8d777e3a89"
 	redeemAddress := recipientAddress
 	redeemAddressString := recipientAddressString
 	redeemKeyPair, redeemPublicKey, err := parsePrivateKeyInKeyPair(redeemPrivateKey)
