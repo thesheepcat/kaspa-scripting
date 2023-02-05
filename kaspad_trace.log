@@ -1,0 +1,96 @@
+2023-02-05 21:45:09.926 [DBG] TXMP: incoming 'SubmitTransactionRequest [code 63]' message from 127.0.0.1:34072 (message number 7)
+2023-02-05 21:45:09.926 [TRC] TXMP: incoming 'SubmitTransactionRequest [code 63]' message from 127.0.0.1:34072  (message number 7): (*appmessage.SubmitTransactionRequestMessage)(0xc000382120)({
+ baseMessage: (appmessage.baseMessage) {
+  messageNumber: (uint64) 7,
+  receivedAt: (time.Time) 2023-02-05 21:45:09.926176423 +0100 CET m=+22122.088202226
+ },
+ Transaction: (*appmessage.RPCTransaction)(0xc020f3c000)({
+  Version: (uint16) 0,
+  Inputs: ([]*appmessage.RPCTransactionInput) (len=1 cap=1) {
+   (*appmessage.RPCTransactionInput)(0xc0003820c0)({
+    PreviousOutpoint: (*appmessage.RPCOutpoint)(0xc003634060)({
+     TransactionID: (string) (len=64) "9a80c9559d9040999f0fa3a49f2e72aac119652f1786660b2dcd742223225fc6",
+     Index: (uint32) 0
+    }),
+    SignatureScript: (string) (len=138) "20c66531fb402f0088d9f5be954cbfededef83a9d3100ef028d57c5aef2dedba3a23a820d87584e4523ea6597caa8fa9bf263a0456f525e59955fc7224a832c51053845e87",
+    Sequence: (uint64) 0,
+    SigOpCount: (uint8) 0,
+    VerboseData: (*appmessage.RPCTransactionInputVerboseData)(<nil>)
+   })
+  },
+  Outputs: ([]*appmessage.RPCTransactionOutput) (len=1 cap=1) {
+   (*appmessage.RPCTransactionOutput)(0xc003634090)({
+    Amount: (uint64) 9970000,
+    ScriptPublicKey: (*appmessage.RPCScriptPublicKey)(0xc003634078)({
+     Version: (uint16) 0,
+     Script: (string) (len=68) "2068ae5b197af75ec4a3a16511f89aa209eecfe47c7ea467cd9e2db5f3d2c9a7e6ac"
+    }),
+    VerboseData: (*appmessage.RPCTransactionOutputVerboseData)(<nil>)
+   })
+  },
+  LockTime: (uint64) 0,
+  SubnetworkID: (string) (len=40) "0000000000000000000000000000000000000000",
+  Gas: (uint64) 0,
+  Payload: (string) "",
+  VerboseData: (*appmessage.RPCTransactionVerboseData)(<nil>)
+ }),
+ AllowOrphan: (bool) false
+})
+
+2023-02-05 21:45:09.926 [TRC] TXMP: validateAndInsertTransaction 3ea7ff16f8c3b5e7ad88399841a3d41fbf636bd98b013e82dd5fc046a3ee1779 start
+2023-02-05 21:45:09.926 [TRC] BDAG: populateTransactionWithUTXOEntriesFromVirtualOrDiff start for transaction 3ea7ff16f8c3b5e7ad88399841a3d41fbf636bd98b013e82dd5fc046a3ee1779
+2023-02-05 21:45:09.926 [TRC] BDAG: Populating outpoint 9a80c9559d9040999f0fa3a49f2e72aac119652f1786660b2dcd742223225fc6:0 from the database
+2023-02-05 21:45:09.926 [TRC] BDAG: populateTransactionWithUTXOEntriesFromVirtualOrDiff end for transaction 3ea7ff16f8c3b5e7ad88399841a3d41fbf636bd98b013e82dd5fc046a3ee1779
+2023-02-05 21:45:09.926 [TRC] SCRP: stepping 00:0000: OP_DATA_32 0xc66531fb402f0088d9f5be954cbfededef83a9d3100ef028d57c5aef2dedba3a
+2023-02-05 21:45:09.927 [TRC] SCRP: Stack:
+00000000  c6 65 31 fb 40 2f 00 88  d9 f5 be 95 4c bf ed ed  |.e1.@/......L...|
+00000010  ef 83 a9 d3 10 0e f0 28  d5 7c 5a ef 2d ed ba 3a  |.......(.|Z.-..:|
+
+2023-02-05 21:45:09.927 [TRC] SCRP: stepping 00:0001: OP_DATA_35 0xa820d87584e4523ea6597caa8fa9bf263a0456f525e59955fc7224a832c51053845e87
+2023-02-05 21:45:09.927 [TRC] SCRP: Stack:
+00000000  c6 65 31 fb 40 2f 00 88  d9 f5 be 95 4c bf ed ed  |.e1.@/......L...|
+00000010  ef 83 a9 d3 10 0e f0 28  d5 7c 5a ef 2d ed ba 3a  |.......(.|Z.-..:|
+00000000  a8 20 d8 75 84 e4 52 3e  a6 59 7c aa 8f a9 bf 26  |. .u..R>.Y|....&|
+00000010  3a 04 56 f5 25 e5 99 55  fc 72 24 a8 32 c5 10 53  |:.V.%..U.r$.2..S|
+00000020  84 5e 87                                          |.^.|
+
+2023-02-05 21:45:09.927 [TRC] SCRP: stepping 01:0000: OP_BLAKE2B
+2023-02-05 21:45:09.927 [TRC] SCRP: Stack:
+00000000  c6 65 31 fb 40 2f 00 88  d9 f5 be 95 4c bf ed ed  |.e1.@/......L...|
+00000010  ef 83 a9 d3 10 0e f0 28  d5 7c 5a ef 2d ed ba 3a  |.......(.|Z.-..:|
+00000000  2e b5 c8 c7 15 65 ef d2  43 f3 b3 a6 b1 b7 04 1f  |.....e..C.......|
+00000010  55 a8 5e 5b 23 9c d1 41  35 e7 5b 7b 25 56 d1 78  |U.^[#..A5.[{%V.x|
+
+2023-02-05 21:45:09.927 [TRC] SCRP: stepping 01:0001: OP_DATA_32 0x2eb5c8c71565efd243f3b3a6b1b7041f55a85e5b239cd14135e75b7b2556d178
+2023-02-05 21:45:09.927 [TRC] SCRP: Stack:
+00000000  c6 65 31 fb 40 2f 00 88  d9 f5 be 95 4c bf ed ed  |.e1.@/......L...|
+00000010  ef 83 a9 d3 10 0e f0 28  d5 7c 5a ef 2d ed ba 3a  |.......(.|Z.-..:|
+00000000  2e b5 c8 c7 15 65 ef d2  43 f3 b3 a6 b1 b7 04 1f  |.....e..C.......|
+00000010  55 a8 5e 5b 23 9c d1 41  35 e7 5b 7b 25 56 d1 78  |U.^[#..A5.[{%V.x|
+00000000  2e b5 c8 c7 15 65 ef d2  43 f3 b3 a6 b1 b7 04 1f  |.....e..C.......|
+00000010  55 a8 5e 5b 23 9c d1 41  35 e7 5b 7b 25 56 d1 78  |U.^[#..A5.[{%V.x|
+
+2023-02-05 21:45:09.927 [TRC] SCRP: stepping 01:0002: OP_EQUAL
+2023-02-05 21:45:09.927 [TRC] SCRP: Stack:
+00000000  c6 65 31 fb 40 2f 00 88  d9 f5 be 95 4c bf ed ed  |.e1.@/......L...|
+00000010  ef 83 a9 d3 10 0e f0 28  d5 7c 5a ef 2d ed ba 3a  |.......(.|Z.-..:|
+
+2023-02-05 21:45:09.927 [TRC] SCRP: stepping 02:0000: OP_SHA256
+2023-02-05 21:45:09.927 [TRC] SCRP: Stack:
+00000000  d8 75 84 e4 52 3e a6 59  7c aa 8f a9 bf 26 3a 04  |.u..R>.Y|....&:.|
+00000010  56 f5 25 e5 99 55 fc 72  24 a8 32 c5 10 53 84 5e  |V.%..U.r$.2..S.^|
+
+2023-02-05 21:45:09.927 [TRC] SCRP: stepping 02:0001: OP_DATA_32 0xd87584e4523ea6597caa8fa9bf263a0456f525e59955fc7224a832c51053845e
+2023-02-05 21:45:09.927 [TRC] SCRP: Stack:
+00000000  d8 75 84 e4 52 3e a6 59  7c aa 8f a9 bf 26 3a 04  |.u..R>.Y|....&:.|
+00000010  56 f5 25 e5 99 55 fc 72  24 a8 32 c5 10 53 84 5e  |V.%..U.r$.2..S.^|
+00000000  d8 75 84 e4 52 3e a6 59  7c aa 8f a9 bf 26 3a 04  |.u..R>.Y|....&:.|
+00000010  56 f5 25 e5 99 55 fc 72  24 a8 32 c5 10 53 84 5e  |V.%..U.r$.2..S.^|
+
+2023-02-05 21:45:09.927 [TRC] SCRP: stepping 02:0002: OP_EQUAL
+2023-02-05 21:45:09.927 [TRC] SCRP: Stack:
+00000000  01                                                |.|
+
+2023-02-05 21:45:09.927 [TRC] TXMP: validateAndInsertTransaction 3ea7ff16f8c3b5e7ad88399841a3d41fbf636bd98b013e82dd5fc046a3ee1779 end. Took: 542.422µs
+2023-02-05 21:45:09.927 [DBG] PROT: Transaction propagation: broadcasting 1 transactions
+2023-02-05 21:45:09.927 [DBG] TXMP: outgoing 'SubmitTransactionResponse [code 64]' message to 127.0.0.1:34072
