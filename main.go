@@ -409,6 +409,7 @@ func redeemContractTransaction(contractTransactionID string, selectedUTXOToRedee
 
 // Broadcast transaction on the network
 func sendTransaction(client *rpcclient.RPCClient, rpcTransaction *appmessage.RPCTransaction) (string, error) {
+  printRpcTransaction(rpcTransaction)
 	submitTransactionResponse, err := client.SubmitTransaction(rpcTransaction, false)
 	if err != nil {
 		return "", errors.Wrapf(err, "error submitting transaction")
@@ -619,4 +620,28 @@ func redeemP2SHContract(sig, contract, pubkey, secret []byte) ([]byte, error) {
 func sha256Hash(x []byte) []byte {
 	h := sha256.Sum256(x)
 	return h[:]
+}
+func printRpcTransaction(rpcTransaction *appmessage.RPCTransaction){
+  fmt.Println("Transaction:")
+  fmt.Println("\tVersion:",rpcTransaction.Version)
+  fmt.Println("\tLockTime:",rpcTransaction.LockTime)
+  fmt.Println("\tSubnetworkID:",rpcTransaction.SubnetworkID)
+  fmt.Println("\tGas:",rpcTransaction.Gas)
+  fmt.Println("\tPayload:",rpcTransaction.Payload)
+  fmt.Println("\tInputs:")
+  for i := range rpcTransaction.Inputs{
+    fmt.Println("\t\tInput:", i)
+    fmt.Println("\t\tSignatureScript:",rpcTransaction.Inputs[i].SignatureScript)
+    fmt.Println("\t\tSequence:",rpcTransaction.Inputs[i].Sequence)
+    fmt.Println("\t\tSigOpCount:",rpcTransaction.Inputs[i].SigOpCount)
+  }
+  fmt.Println("Outputs:")
+  for i := range rpcTransaction.Outputs{
+    fmt.Println("\t\tOutput:",i)
+    fmt.Println("\t\tAmount:",rpcTransaction.Outputs[i].Amount)
+    fmt.Println("\t\tScriptPublicKey:")
+    fmt.Println("\t\t\tVersion:",rpcTransaction.Outputs[i].ScriptPublicKey.Version)
+    fmt.Println("\t\t\tScript:",rpcTransaction.Outputs[i].ScriptPublicKey.Script)
+  }
+
 }
