@@ -136,8 +136,15 @@ func main() {
 	// Waiting for the network to deploy the contract (block mined, transaction confirmed)
 	fmt.Println("Waiting for network to deploy the contract....")
 	fmt.Println()
+  	fmt.Println("contractP2SHaddress :=", contractP2SHaddress)
+  	fmt.Println("transactionID:=", transactionID)
+  	fmt.Println("secret :=", secret)
+  	fmt.Println("secretContract :=", secretContract)
+  	fmt.Println()
 	time.Sleep(20 * time.Second)
+	
 
+	
 	// Redeem from P2SH contract
 	redeemContract(client, contractP2SHaddress.String(), transactionID, redeemKeyPair, redeemPubKeySerialized, redeemAddress, redeemAddressString, prefix, secret, secretContract)
 
